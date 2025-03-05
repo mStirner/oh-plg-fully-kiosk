@@ -6,7 +6,7 @@ https://www.fully-kiosk.com/en/#rest
 > This plugin uses [Fully Kiosk](https://github.com/3cky/mbusd) Plus features.<br />
 
 > [!NOTE]
-> Change the IP Adress from `127.5.5.1` to your devices real IP
+> Change the IP Adress from `127.5.5.1` to your devices real IP<br />
 > Set the API password secret in vaults
 
 
