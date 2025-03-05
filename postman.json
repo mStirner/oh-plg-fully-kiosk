@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "b9c434fc-9df5-4c7a-97aa-617266f83e1c",
+		"name": "Fully Kiosk API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6522444"
+	},
+	"item": [
+		{
+			"name": "Display/Screensafer/Daydream",
+			"item": [
+				{
+					"name": "Set brightness",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=rs&key=screenBrightness&value=255&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "rs"
+								},
+								{
+									"key": "key",
+									"value": "screenBrightness"
+								},
+								{
+									"key": "value",
+									"value": "255"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Screen On",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=screenOn&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "screenOn"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Screen Off",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=screenOff&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "screenOff"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Screensaver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=startScreensaver&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "startScreensaver"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop Screensaver",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=stopScreensaver&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "stopScreensaver"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Start Daydream",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=startDaydream&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "startDaydream"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop Daydream",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=stopDaydream&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "stopDaydream"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Simulate Motion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=triggerMotion&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "triggerMotion"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kiosk & App Management",
+			"item": [
+				{
+					"name": "Keep Screen On",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=setBooleanSetting&key=keepScreenOn&value=false&type=json&password={{PASSWORD}}true",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "setBooleanSetting"
+								},
+								{
+									"key": "key",
+									"value": "keepScreenOn"
+								},
+								{
+									"key": "value",
+									"value": "false"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disable Locked Mode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=disableLockedMode&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "disableLockedMode"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enable Locked Mode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=enableLockedMode&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "enableLockedMode"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TTS & Multimedia",
+			"item": [
+				{
+					"name": "TTS Play",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=textToSpeech&type=json&password={{PASSWORD}}&locale=de&text=Guten%20Morgen%20Marc%2C%20zeit%20zum%20Aufstehen",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "textToSpeech"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								},
+								{
+									"key": "locale",
+									"value": "de"
+								},
+								{
+									"key": "text",
+									"value": "Guten%20Morgen%20Marc%2C%20zeit%20zum%20Aufstehen"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TTS Stop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{HOST}}:2323/?cmd=stopTextToSpeech&type=json&password={{PASSWORD}}",
+							"protocol": "http",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "2323",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "stopTextToSpeech"
+								},
+								{
+									"key": "type",
+									"value": "json"
+								},
+								{
+									"key": "password",
+									"value": "{{PASSWORD}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{HOST}}:2323/?cmd=deviceInfo&type=json&password={{PASSWORD}}",
+					"protocol": "http",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "2323",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "deviceInfo"
+						},
+						{
+							"key": "type",
+							"value": "json"
+						},
+						{
+							"key": "password",
+							"value": "{{PASSWORD}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "192.168.2.142",
+			"type": "string"
+		},
+		{
+			"key": "PASSWORD",
+			"value": "Pa$$w0rd",
+			"type": "string"
+		}
+	]
+}

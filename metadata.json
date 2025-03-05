@@ -1,0 +1,13 @@
+{
+    "name": "oh-plg-fully-kiosk",
+    "version": "0.1.0",
+    "intents": [
+      "devices",
+      "endpoints",
+      "vault"
+    ],
+    "author": "Marc Stirner <marc.stirner@open-haus.io>",
+    "website": "",
+    "description": "",
+    "uuid": "e973c5e3-9188-4381-8c04-59aa9c7e2f48"
+  }

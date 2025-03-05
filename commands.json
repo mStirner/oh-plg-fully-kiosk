@@ -1,0 +1,32 @@
+[{
+    "name": "Screen brightness",
+    "alias": "screenBrightness",
+    "params": [{
+        "type": "number",
+        "key": "brigthness",
+        "max": 255
+    }]
+},{
+    "name": "Screen On",
+    "alias": "screenOn"
+},{
+    "name": "Screen Off",
+    "alias": "screenOff"
+}, {
+    "name": "Text to Speech: Play",
+    "alias": "textToSpeech",
+    "params": [{
+        "type": "string",
+        "key": "message"
+    }]
+}, {
+    "name": "Text to Speech: Stop",
+    "alias": "stopTextToSpeech"
+}, {
+    "name": "Keep Screen On",
+    "alias": "keepScreenOn",
+    "params": [{
+        "type": "boolean",
+        "key": "value"
+    }]
+}]
