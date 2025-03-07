@@ -70,62 +70,72 @@ module.exports = (info, logger, init) => {
                     let secret = vault.secrets[0];
 
                     endpoint.commands.forEach((command) => {
-                        command.setHandler((cmd, iface, params, done) => {
+                        command.setHandler(async (cmd, iface, params, done) => {
+                            try {
 
-                            let url = new URL(`http://${host}:${port}?cmd=${cmd.alias}&type=json&password=${secret.decrypt()}`);
+                                let url = new URL(`http://${host}:${port}?cmd=${cmd.alias}&type=json&password=${secret.decrypt()}`);
 
-                            if (cmd.alias === "textToSpeech") {
+                                if (cmd.alias === "textToSpeech") {
 
-                                let today = new Date();
-                                let day = today.toLocaleDateString('de-DE', { weekday: 'long' });
-                                let month = today.toLocaleDateString('de-DE', { month: 'long' });
+                                    // fetch temperature
+                                    let { body } = await request(`https://wttr.in/90765,DE?format=%t`);
 
-                                let text = `${getGreeting(today)} Marc, `;
-                                text += `Es ist ${day} der ${today.getDate()} ${month}. `;
-                                text += `Wir haben ${today.getHours()} Uhr, und ${today.getMinutes} Minuten. `;
-                                //text += "Zeit zum aufstehen.";
+                                    let today = new Date();
+                                    let day = today.toLocaleDateString('de-DE', { weekday: 'long' });
+                                    let month = today.toLocaleDateString('de-DE', { month: 'long' });
 
-                                url.searchParams.set("text", text);
+                                    let text = `${getGreeting(today)} Marc, `;
+                                    text += `Es ist ${day} der ${today.getDate()} ${month}. `;
+                                    text += `Wir haben ${today.getHours()} Uhr, und ${today.getMinutes()} Minuten. `;
+                                    text += `Die Temperatur beträgt ${body.toString()}`;
 
-                            }
-
-                            // handle settings key/value
-                            if (["screenBrightness", "keepScreenOn"].includes(cmd.alias)) {
-
-                                // param type = cmd value
-                                // boolean = setBooleanSetting
-                                // number = setStringSetting
-                                // string = setStringSetting
-
-                                let { type, value } = params[0];
-
-                                switch (type) {
-                                    case "string": url.searchParams.set("cmd", "setStringSetting"); break;
-                                    case "number": url.searchParams.set("cmd", "setStringSetting"); break;
-                                    case "boolean": url.searchParams.set("cmd", "setBooleanSetting"); break;
-                                }
-
-                                url.searchParams.set("key", cmd.alias);
-                                url.searchParams.set("value", value);
-
-                            }
-
-                            console.log("UZRL", url.toString())
-
-                            request(url.toString(), {
-                                agent
-                            }, (err, result) => {
-                                if (err) {
-
-                                    done(err);
-
-                                } else {
-
-                                    done(null, result.body?.status === "OK");
+                                    url.searchParams.set("text", text);
 
                                 }
-                            });
 
+                                // handle settings key/value
+                                if (["screenBrightness", "keepScreenOn"].includes(cmd.alias)) {
+
+                                    // param type = cmd value
+                                    // boolean = setBooleanSetting
+                                    // number = setStringSetting
+                                    // string = setStringSetting
+
+                                    let { type, value } = params[0];
+
+                                    switch (type) {
+                                        case "string": url.searchParams.set("cmd", "setStringSetting"); break;
+                                        case "number": url.searchParams.set("cmd", "setStringSetting"); break;
+                                        case "boolean": url.searchParams.set("cmd", "setBooleanSetting"); break;
+                                    }
+
+                                    url.searchParams.set("key", cmd.alias);
+                                    url.searchParams.set("value", value);
+
+                                }
+
+                                console.log("UZRL", url.toString())
+
+                                request(url.toString(), {
+                                    agent
+                                }, (err, result) => {
+                                    if (err) {
+
+                                        done(err);
+
+                                    } else {
+
+                                        done(null, result.body?.status === "OK");
+
+                                    }
+                                });
+
+
+                            } catch (err) {
+
+                                logger.error(err, "Error in command handler, could not send command!");
+
+                            }
                         });
                     });
 
