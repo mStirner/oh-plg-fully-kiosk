@@ -3,7 +3,37 @@ const request = require("../../helper/request.js");
 
 const { URL } = require("url");
 
-const PASSWORD = "Pa$$w0rd";
+function getGreeting(now) {
+
+    const hour = now.getHours();
+
+    let greeting;
+
+    switch (true) {
+        case (hour >= 5 && hour < 11):
+            greeting = "Guten Morgen";
+            break;
+        case (hour >= 11 && hour < 14):
+            greeting = "Mahlzeit";
+            break;
+        case (hour >= 14 && hour < 18):
+            greeting = "Schönen Nachmittag";
+            break;
+        case (hour >= 18 && hour < 22):
+            greeting = "Guten Abend";
+            break;
+        case (hour >= 22 || hour < 5):
+            greeting = "Gute Nacht";
+            break;
+        default:
+            greeting = "Hallo";
+            break;
+    }
+
+    return greeting;
+
+}
+
 
 module.exports = (info, logger, init) => {
     return init([
@@ -50,9 +80,10 @@ module.exports = (info, logger, init) => {
                                 let day = today.toLocaleDateString('de-DE', { weekday: 'long' });
                                 let month = today.toLocaleDateString('de-DE', { month: 'long' });
 
-                                let text = "Guten Morgen Marc, ";
+                                let text = `${getGreeting(today)} Marc, `;
                                 text += `Es ist ${day} der ${today.getDate()} ${month}. `;
-                                text += "Zeit zum aufstehen.";
+                                text += `Wir haben ${today.getHours()} Uhr, und ${today.getMinutes} Minuten. `;
+                                //text += "Zeit zum aufstehen.";
 
                                 url.searchParams.set("text", text);
 

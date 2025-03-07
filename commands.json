@@ -13,7 +13,7 @@
     "name": "Screen Off",
     "alias": "screenOff"
 }, {
-    "name": "Text to Speech: Play",
+    "name": "TTS: Greeting & Date",
     "alias": "textToSpeech",
     "params": [{
         "type": "string",
